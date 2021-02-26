@@ -5,10 +5,20 @@ import Restaurant from '../restaurant';
 import Tabs from '../tabs';
 
 const Restaurants = ({ restaurants }) => {
+  console.log(restaurants);
+
+  /*
   const tabs = restaurants.map((restaurant) => ({
     title: restaurant.name,
     content: <Restaurant restaurant={restaurant} />,
   }));
+  */
+
+  const tabs = Object.keys(restaurants).map((restaurant) => ({
+    title: restaurant.name,
+    content: <Restaurant id={restaurant.id} />,
+  }));
+
   return <Tabs tabs={tabs} />;
 };
 
